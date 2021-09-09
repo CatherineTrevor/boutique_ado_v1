@@ -14,7 +14,7 @@ def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
-    if request == 'POST':
+    if request.method == 'POST':
         bag = request.session.get('bag', {})
 
         form_data = {
